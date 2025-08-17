@@ -111,6 +111,8 @@ body {
     cursor: pointer;
 }
  .add-entry-btn {
+    margin-left:auto;
+    display:block;
     background-color: #27ae60;
     color: white;
     border: none;
@@ -129,3 +131,9 @@ body {
 .add-entry-btn:active {
     transform: translateY(1px);
 }
+ .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e1e8ed;
+            margin: 20px 0;
+ }
