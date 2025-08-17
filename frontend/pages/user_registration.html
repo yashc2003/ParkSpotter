@@ -56,6 +56,11 @@
 
             errorMessage.textContent = "";
             successMessage.textContent = "";
+
+            if(name === "" || email === "" || phone === "" || vehicle === "" || password === "" || confirmPassword === ""){
+        errorMessage.textContent = "All fields are required.";
+        return;
+      }
         });
     </script>
 
