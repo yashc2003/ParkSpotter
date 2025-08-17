@@ -50,5 +50,16 @@
             <button type="submit" class="add-entry-btn">Add Entry</button>
         </form>
     </div>
+    <script>
+        document.getElementById('vehicleEntryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+         const plateNumber = document.getElementById('plateNumber').value;
+            const entryTime = document.getElementById('entryTime').value;
+            const exitTime = document.getElementById('exitTime').value;
+            const isPaid = document.getElementById('isPaid').checked;
+            const selectedVehicle = document.querySelector('input[name="vehicleType"]:checked');
+
+        });
+    </script>
 </body>
 </html>
