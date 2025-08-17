@@ -59,3 +59,15 @@ body {
     .btn:hover {
       background: #0056b3;
     }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
