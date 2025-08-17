@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Parking – Receipt Input</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .brand {
+      font-weight: bold;
+      font-size: 20px;
+      color: #d1242f;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logout {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+  
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .card-header {
+      background: #2b8f54;
+      color: white;
+      padding: 14px 18px;
+      font-weight: bold;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .key {
+      width: 150px;
+      font-weight: bold;
+    }
+    input {
+      flex: 1;
+      padding: 6px 8px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      margin-right: 8px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #1d4ed8;
+    }
+    .btn-secondary {
+      background: #16a34a;
+    }
+    .btn-secondary:hover {
+      background: #15803d;
+    }
+    .btn-back {
+      background: #6b7280;
+    }
+    .btn-back:hover {
+      background: #374151;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="brand">🚗 Smart Parking</div>
+    <div class="nav-links">
+      <a href="#">Dashboard</a>
+      <a href="#">Detect Vehicle</a>
+      <a href="#">New Entry</a>
+      <a href="#">Earnings Report</a>
+    </div>
+    <div class="right">
+      <span>Hi 👋, rohit</span>
+      <button class="logout">Logout</button>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Parking Receipt</div>
+      <div class="card-body">
+        <div class="row"><div class="key">Plate Number:</div><input id="plate" type="text" placeholder="Enter Plate Number"></div>
+        <div class="row"><div class="key">Vehicle Type:</div><input id="vehicle" type="text" placeholder="Enter Vehicle Type"></div>
+        <div class="row"><div class="key">Entry Time:</div><input id="entry" type="datetime-local"></div>
+        <div class="row"><div class="key">Exit Time:</div><input id="exit" type="datetime-local"></div>
+        <div class="row"><div class="key">Duration:</div><input id="duration" type="text" readonly></div>
+        <div class="row"><div class="key">Total Charge:</div><input id="charge" type="text" readonly></div>
+        <div class="row"><div class="key">Payment Status:</div><input id="status" type="text" placeholder="Enter Status (PAID/UNPAID)"></div>
+        
+        <button class="btn" onclick="submitForm()">💾 Save Receipt</button>
+        <button class="btn btn-secondary" onclick="savePDF()">📄 Save as PDF</button>
+        <button class="btn btn-back" onclick="goDashboard()">⬅ Back to Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const entryInput = document.getElementById("entry");
+    const exitInput = document.getElementById("exit");
+    const durationInput = document.getElementById("duration");
+    const chargeInput = document.getElementById("charge");
+
+    const ratePerHour = 10; 
+
+    function calculateDurationAndCharge() {
+      const entryTime = new Date(entryInput.value);
+      const exitTime = new Date(exitInput.value);
+
+      if (!entryInput.value || !exitInput.value) {
+        durationInput.value = "";
+        chargeInput.value = "";
+        return;
+      }
+
+      if (exitTime <= entryTime) {
+        durationInput.value = "Invalid!";
+        chargeInput.value = "—";
+        return;
+      }
+
+    
+      const diffMs = exitTime - entryTime;
+      const diffMins = Math.floor(diffMs / 60000);
+      const hrs = Math.floor(diffMins / 60);
+      const mins = diffMins % 60;
+
+      durationInput.value = `${hrs} hr ${mins} min`;
+
+
+      const hoursToCharge = Math.ceil(diffMins / 60);
+      const total = hoursToCharge * ratePerHour;
+
+      chargeInput.value = `₹${total}`;
+    }
+
+    entryInput.addEventListener("change", calculateDurationAndCharge);
+    exitInput.addEventListener("change", calculateDurationAndCharge);
+
+    function submitForm() {
+      alert("Receipt Saved (demo). You can connect this with backend later.");
+    }
+
+    async function savePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+ 
+      const plate = document.getElementById("plate").value;
+      const vehicle = document.getElementById("vehicle").value;
+      const entry = document.getElementById("entry").value;
+      const exit = document.getElementById("exit").value;
+      const duration = document.getElementById("duration").value;
+      const charge = document.getElementById("charge").value;
+      const status = document.getElementById("status").value;
+
+      doc.setFontSize(18);
+      doc.text("🚗 Smart Parking Receipt", 20, 20);
+
+      doc.setFontSize(12);
+      doc.text(`Plate Number: ${plate}`, 20, 40);
+      doc.text(`Vehicle Type: ${vehicle}`, 20, 50);
+      doc.text(`Entry Time: ${entry}`, 20, 60);
+      doc.text(`Exit Time: ${exit}`, 20, 70);
+      doc.text(`Duration: ${duration}`, 20, 80);
+      doc.text(`Total Charge: ${charge}`, 20, 90);
+      doc.text(`Payment Status: ${status}`, 20, 100);
+
+      doc.save("Parking_Receipt.pdf");
+    }
+
+    function goDashboard() {
+      alert("Back to Dashboard (replace with real link).");
+    
+    }
+  </script>
+</body>
+</html>
