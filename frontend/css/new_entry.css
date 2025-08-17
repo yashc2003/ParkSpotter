@@ -71,3 +71,23 @@ body {
     gap: 15px;
             
 }
+.datetime-input {
+    flex: 1;
+}
+ .calendar-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #666;
+    border-radius: 2px;
+    position: relative;
+}
+
+.calendar-icon::before {
+    content: '📅';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
