@@ -51,7 +51,7 @@
         </form>
     </div>
     <script>
-        document.getElementById('vehicleEntryForm').addEventListener('submit', function(e) {
+        document.getElementById('vehicleEntryform').addEventListener('submit', function(e) {
             e.preventDefault();
          const plateNumber = document.getElementById('plateNumber').value;
             const entryTime = document.getElementById('entryTime').value;
@@ -72,6 +72,10 @@
 
             if (!entryTime) {
                 alert('Please select an entry time');
+                return;
+            }
+            if (!exitTime) {
+                alert('Please select an exit time');
                 return;
             }
 
