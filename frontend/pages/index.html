@@ -1,18 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  rel="stylesheet" href="./../css/index.css">
-    <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <title>ParkSpotter - Smart Parking System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./../css/index.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Dashboard</h1>
-        <p>This is a simple dashboard page.</p>
-        <button id="actionButton">Click Me!</button>
+
+  <div class="navbar">
+    <div class="brand">
+      🚗 ParkSpotter
+    </div>
+    <div class="nav-links">
+      <a href="./../pages/index.html">Dashboard</a>
+      <a href="./../pages/detect.html">Detect Vehicle</a>
+      <a href="./../pages/new-entry.html">New Entry</a>
+      <a href="./../pages/earnings.html">Earnings Report</a>
+    </div>
+    <div class="user-info">
+      <span>Hi 👋, User</span>
+      <button class="logout-btn">Logout</button>
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <h2>🚗 Parking Dashboard</h2>
+
+    <div class="action-row">
+      <input type="text" placeholder="Search by Plate Number" id="searchInput"/>
+      <select>
+        <option>All Sessions</option>
+        <option>Session 1</option>
+        <option>Session 2</option>
+      </select>
+      <button class="filter-btn">Apply Filter</button>
     </div>
 
-    
+    <div class="slots-row">
+      <button class="slot-btn car">🚗 Car: <span id="carCount">24</span></button>
+      <button class="slot-btn bike">🏍️ Bike: <span id="bikeCount">19</span></button>
+      <button class="slot-btn bus">🚌 Bus: <span id="busCount">5</span></button>
+    </div>
+
+    <div class="entry-btn-row">
+      <button class="entry-btn car">Detect Car Entry/Exit</button>
+      <button class="entry-btn bike">Detect Bike Entry/Exit</button>
+      <button class="entry-btn bus">Detect Bus Entry/Exit</button>
+      <button class="earnings-btn">💰 View Earnings Report</button>
+    </div>
+
+    <!-- Parking Records Table -->
+    <table class="parking-table" id="parkingTable">
+      <thead>
+        <tr>
+          <th>Plate Number</th>
+          <th>Vehicle Type</th>
+          <th>Entry Time</th>
+          <th>Exit Time</th>
+          <th>Charge</th>
+          <th>Paid</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example data -->
+        <tr>
+          <td>HP78A2911</td>
+          <td>Car</td>
+          <td>June 19, 2025, 11:30 a.m.</td>
+          <td>--</td>
+          <td>--</td>
+          <td><span class="unpaid-badge">Unpaid</span></td>
+          <td>
+            <button class="action-btn edit">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>HP788317</td>
+          <td>Bike</td>
+          <td>June 19, 2025, 11:28 a.m.</td>
+          <td>--</td>
+          <td>--</td>
+          <td><span class="unpaid-badge">Unpaid</span></td>
+          <td>
+            <button class="action-btn edit">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>4CY0002</td>
+          <td>Car</td>
+          <td>June 19, 2025, 8:22 a.m.</td>
+          <td>June 19, 2025, 8:38 a.m.</td>
+          <td>13.0</td>
+          <td><span class="paid-badge">Paid</span></td>
+          <td>
+            <button class="action-btn view">View</button>
+            <button class="action-btn pdf">PDF</button>
+            <button class="action-btn edit">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>RE7A9100</td>
+          <td>Car</td>
+          <td>June 19, 2025, 8:22 a.m.</td>
+          <td>June 19, 2025, 11:20 a.m.</td>
+          <td>148.0</td>
+          <td><span class="paid-badge">Paid</span></td>
+          <td>
+            <button class="action-btn view">View</button>
+            <button class="action-btn pdf">PDF</button>
+            <button class="action-btn edit">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>TS03MF4477</td>
+          <td>Car</td>
+          <td>June 19, 2025, 8:15 a.m.</td>
+          <td>June 19, 2025, 11:20 a.m.</td>
+          <td>153.0</td>
+          <td><span class="paid-badge">Paid</span></td>
+          <td>
+            <button class="action-btn view">View</button>
+            <button class="action-btn pdf">PDF</button>
+            <button class="action-btn edit">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Insert Form for New Record -->
+    <form class="insert-form" id="insertForm" onsubmit="addParkingRecord(event)">
+      <h3>Add Parking Record</h3>
+      <input type="text" placeholder="Plate Number" id="newPlate" required>
+      <select id="newType" required>
+        <option value="">Type</option>
+        <option>Car</option>
+        <option>Bike</option>
+        <option>Bus</option>
+      </select>
+      <input type="datetime-local" placeholder="Entry Time" id="newEntry" required>
+      <input type="datetime-local" placeholder="Exit Time" id="newExit">
+      <input type="number" placeholder="Charge" id="newCharge">
+      <select id="newPaid" required>
+        <option>Unpaid</option>
+        <option>Paid</option>
+      </select>
+      <button class="insert-btn" type="submit">Add</button>
+    </form>
+
+  </div>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <span class="footer-logo"><span class="emoji">🚗</span> ParkSpotter</span>
+    <span class="footer-text">© 2025 ParkSpotter. All rights reserved.</span>
+    <span class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
+  <script>
+    function addParkingRecord(event) {
+      event.preventDefault();
+      const plate = document.getElementById('newPlate').value;
+      const type = document.getElementById('newType').value;
+      const entry = document.getElementById('newEntry').value;
+      const exit = document.getElementById('newExit').value || '--';
+      const charge = document.getElementById('newCharge').value || '--';
+      const paid = document.getElementById('newPaid').value;
+
+      const table = document.getElementById('parkingTable').getElementsByTagName('tbody')[0];
+      const row = table.insertRow(0);
+      row.insertCell(0).innerText = plate;
+      row.insertCell(1).innerText = type;
+      row.insertCell(2).innerText = entry;
+      row.insertCell(3).innerText = exit;
+      row.insertCell(4).innerText = charge;
+      const paidCell = row.insertCell(5);
+      if (paid === "Paid") {
+        paidCell.innerHTML = '<span class="paid-badge">Paid</span>';
+      } else {
+        paidCell.innerHTML = '<span class="unpaid-badge">Unpaid</span>';
+      }
+      row.insertCell(6).innerHTML = `
+        <button class="action-btn view">View</button>
+        <button class="action-btn pdf">PDF</button>
+        <button class="action-btn edit">Edit</button>
+      `;
+
+      document.getElementById('insertForm').reset();
+    }
+  </script>
 </body>
 </html>
