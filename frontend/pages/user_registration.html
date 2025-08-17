@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
 </head>
+
 <body>
     <div class="container">
-    <h2>User Registration</h2>
-    <form id="registrationForm">
-      <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" id="name" placeholder="Enter your name">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="email" placeholder="Enter your email">
-      </div>
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="text" id="phone" placeholder="Enter your phone number">
-      </div>
-      <div class="form-group">
-        <label>Vehicle Number</label>
-        <input type="text" id="vehicle" placeholder="Enter your vehicle number">
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" id="password" placeholder="Enter password">
-      </div>
-      <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm password">
-      </div>
-      <p class="error" id="errorMessage"></p>
-      <button type="submit" class="btn">Register</button>
-      <p class="success" id="successMessage"></p>
-    </form>
-  </div>
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label>Vehicle Number</label>
+                <input type="text" id="vehicle" placeholder="Enter your vehicle number">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm password">
+            </div>
+            <p class="error" id="errorMessage"></p>
+            <button type="submit" class="btn">Register</button>
+            <p class="success" id="successMessage"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let vehicle = document.getElementById("vehicle").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            let errorMessage = document.getElementById("errorMessage");
+            let successMessage = document.getElementById("successMessage");
+
+            errorMessage.textContent = "";
+            successMessage.textContent = "";
+        });
+    </script>
+
 </body>
+
 </html>
