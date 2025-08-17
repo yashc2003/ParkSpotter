@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: center;
+  height: 85vh;
 }
 
 .login{
@@ -23,7 +23,7 @@ body {
 }
 
 .btn{
-    width: 100%;
+  width: 100%;
   padding: 12px;
   border: none;
   background: #a8dadc;
@@ -33,4 +33,16 @@ body {
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.btn:hover {
+  background: #457b9d;
+  color: #ffffff;
+}
+
+.login input:focus {
+  outline: none;
+  border: 1px solid #457b9d;
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(69, 123, 157, 0.5);
 }
