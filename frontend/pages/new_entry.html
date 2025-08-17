@@ -7,6 +7,93 @@
     <link rel="stylesheet" href="./../css/new_entry.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="form-header">
+            <div class="icon"></div>
+            <h1>Manual Vehicle Entry</h1>
+        </div>
+        <form id="vehicleEntryform">
+            <div class="form-group">
+                <label for="plateNumber">Plate number:</label>
+                <input type="text" id="plateNumber" class="form-control" placeholder="Enter plate number">
+            </div>
+             <div class="vehicle-type-section">
+                <label style="font-weight: 500; font-size: 14px; color: #666;">Vehicle type:</label>
+                <div>
+                    <input type="radio" id="car" name="vehicleType" value="Car">
+                    <label for="car">Car</label>
+                    <input type="radio" id="bike" name="vehicleType" value="Bike">
+                    <label for="bike">Bike</label>
+                </div>
+            </div>
+             <div class="form-group">
+                <label for="entryTime">Entry time:</label>
+                <div class="datetime-group">
+                    <input type="datetime-local" id="entryTime" class="form-control datetime-input" value="2025-06-19T11:57">
+                    <div class="calendar-icon"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exitTime">Exit time:</label>
+                <div class="datetime-group">
+                    <input type="datetime-local" id="exitTime" class="form-control datetime-input" placeholder="dd-mm-yyyy ----">
+                    <div class="calendar-icon"></div>
+                </div>
+            </div>
+             <div class="checkbox-group">
+                <label for="isPaid" class="checkbox-label">Is paid:</label>
+                <input type="checkbox" id="isPaid" class="checkbox">
+                
+            </div>
+             <div class="divider"></div>
+
+            <button type="submit" class="add-entry-btn">Add Entry</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('vehicleEntryform').addEventListener('submit', function(e) {
+            e.preventDefault();
+         const plateNumber = document.getElementById('plateNumber').value;
+            const entryTime = document.getElementById('entryTime').value;
+            const exitTime = document.getElementById('exitTime').value;
+            const isPaid = document.getElementById('isPaid').checked;
+            const selectedVehicle = document.querySelector('input[name="vehicleType"]:checked');
+
+             // Frontend validation
+            if (!plateNumber.trim()) {
+                alert('Please enter a plate number');
+                return;
+            }
+
+            if (!selectedVehicle) {
+                alert('Please select a vehicle type');
+                return;
+            }
+
+            if (!entryTime) {
+                alert('Please select an entry time');
+                return;
+            }
+            if (!exitTime) {
+                alert('Please select an exit time');
+                return;
+            }
+
+            if (exitTime && new Date(exitTime) <= new Date(entryTime)) {
+                alert('Exit time must be after entry time');
+                return;
+            }
+            const formData = {
+                plateNumber: plateNumber.trim(),
+                vehicleType: selectedVehicle.value,
+                entryTime: entryTime,
+                exitTime: exitTime || null,
+                isPaid: isPaid
+            };
+
+            console.log('Form data ready for backend:', formData);
+             alert('Form validated and ready for backend submission!');
+        });
+    </script>
 </body>
 </html>
