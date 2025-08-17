@@ -61,6 +61,12 @@
         errorMessage.textContent = "All fields are required.";
         return;
       }
+
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if(!email.match(emailPattern)){
+        errorMessage.textContent = "Invalid email format.";
+        return;
+      }
         });
     </script>
 
