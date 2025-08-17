@@ -91,3 +91,41 @@ body {
     transform: translate(-50%, -50%);
     font-size: 12px;
 }
+ .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    color: #666;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+ .add-entry-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-entry-btn:hover {
+    background-color: #229954;
+}
+
+.add-entry-btn:active {
+    transform: translateY(1px);
+}
