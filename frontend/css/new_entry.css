@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    padding: 20px;
+}
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+.form-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+.form-header .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    border-radius: 3px;
+    position: relative;
+}
+.form-header .icon::before {
+    content: '🚗';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+}
+.form-header h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: 500;
+    font-size: 14px;
+}
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+ .form-control:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+ .vehicle-type-section {
+   
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.vehicle-type-section label {
+    margin-right: 15px;
+    font-size: 14px;
+}
+.datetime-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+            
+}
+.datetime-input {
+    flex: 1;
+}
+ .calendar-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #666;
+    border-radius: 2px;
+    position: relative;
+}
+
+.calendar-icon::before {
+    content: '📅';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+ .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    color: #666;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+ .add-entry-btn {
+    margin-left:auto;
+    display:block;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-entry-btn:hover {
+    background-color: #229954;
+}
+
+.add-entry-btn:active {
+    transform: translateY(1px);
+}
+ .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e1e8ed;
+            margin: 20px 0;
+ }
