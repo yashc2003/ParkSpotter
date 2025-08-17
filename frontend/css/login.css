@@ -12,7 +12,7 @@ body {
   height: 85vh;
 }
 
-.login{
+.login-box{
   background: #ffffff;
   padding: 40px;
   border-radius: 20px;
@@ -36,13 +36,7 @@ body {
 }
 
 .btn:hover {
-  background: #457b9d;
-  color: #ffffff;
-}
-
-.login input:focus {
-  outline: none;
-  border: 1px solid #457b9d;
-  background: #ffffff;
-  box-shadow: 0 0 5px rgba(69, 123, 157, 0.5);
+  background: #3a6d8c;
+  color: white;
+  cursor: pointer;
 }
