@@ -11,3 +11,9 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
+.form-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
