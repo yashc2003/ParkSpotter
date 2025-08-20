@@ -83,6 +83,10 @@
                 alert('Exit time must be after entry time');
                 return;
             }
+            if (!isPaid) {
+                alert('Please pay the bill before submitting.');
+                return;
+            }
             const formData = {
                 plateNumber: plateNumber.trim(),
                 vehicleType: selectedVehicle.value,
