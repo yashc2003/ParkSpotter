@@ -156,3 +156,9 @@ body{
             border-radius: 8px;
             padding: 25px;
         }
+         .chart-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
