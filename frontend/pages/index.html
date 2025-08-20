@@ -15,12 +15,12 @@
     <div class="nav-links">
       <a href="./../pages/index.html">Dashboard</a>
       <a href="./../pages/detect.html">Detect Vehicle</a>
-      <a href="./../pages/new-entry.html">New Entry</a>
+      <a href="./../pages/new_entry.html">New Entry</a>
       <a href="./../pages/earnings.html">Earnings Report</a>
     </div>
     <div class="user-info">
       <span>Hi 👋, User</span>
-      <button class="logout-btn">Logout</button>
+     <a href="./../pages/login.html"> <button class="logout-btn">Logout</button></a>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
       <button class="earnings-btn">💰 View Earnings Report</button>
     </div>
 
-    <!-- Parking Records Table -->
+    
     <table class="parking-table" id="parkingTable">
       <thead>
         <tr>
@@ -64,7 +64,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Example data -->
+        
         <tr>
           <td>HP78A2911</td>
           <td>Car</td>
@@ -129,7 +129,7 @@
       </tbody>
     </table>
 
-    <!-- Insert Form for New Record -->
+    
     <form class="insert-form" id="insertForm" onsubmit="addParkingRecord(event)">
       <h3>Add Parking Record</h3>
       <input type="text" placeholder="Plate Number" id="newPlate" required>
@@ -160,38 +160,7 @@
     </span>
   </div>
 </footer>
-
-  <script>
-    function addParkingRecord(event) {
-      event.preventDefault();
-      const plate = document.getElementById('newPlate').value;
-      const type = document.getElementById('newType').value;
-      const entry = document.getElementById('newEntry').value;
-      const exit = document.getElementById('newExit').value || '--';
-      const charge = document.getElementById('newCharge').value || '--';
-      const paid = document.getElementById('newPaid').value;
-
-      const table = document.getElementById('parkingTable').getElementsByTagName('tbody')[0];
-      const row = table.insertRow(0);
-      row.insertCell(0).innerText = plate;
-      row.insertCell(1).innerText = type;
-      row.insertCell(2).innerText = entry;
-      row.insertCell(3).innerText = exit;
-      row.insertCell(4).innerText = charge;
-      const paidCell = row.insertCell(5);
-      if (paid === "Paid") {
-        paidCell.innerHTML = '<span class="paid-badge">Paid</span>';
-      } else {
-        paidCell.innerHTML = '<span class="unpaid-badge">Unpaid</span>';
-      }
-      row.insertCell(6).innerHTML = `
-        <button class="action-btn view">View</button>
-        <button class="action-btn pdf">PDF</button>
-        <button class="action-btn edit">Edit</button>
-      `;
-
-      document.getElementById('insertForm').reset();
-    }
-  </script>
+<script src="./../js/index.js"></script>
+ 
 </body>
 </html>
