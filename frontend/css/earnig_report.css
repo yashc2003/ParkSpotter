@@ -179,3 +179,18 @@ body{
             font-weight: 600;
             color: #333;
         }
+         .chart-container {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fafafa;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-placeholder {
+            color: #999;
+            font-size: 16px;
+        }
