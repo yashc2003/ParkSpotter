@@ -194,3 +194,31 @@ body{
             color: #999;
             font-size: 16px;
         }
+         .legend {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #81c784, #66bb6a);
+            border-radius: 3px;
+        }
+         .legend {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #81c784, #66bb6a);
+            border-radius: 3px;
+        }
