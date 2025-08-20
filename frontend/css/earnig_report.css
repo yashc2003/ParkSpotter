@@ -120,3 +120,16 @@ body{
             font-weight: 700;
             margin: 0;
 }
+.content {
+            padding: 30px;
+        }
+.top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .left-section {
+            flex: 1;
+}
