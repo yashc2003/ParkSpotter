@@ -133,3 +133,20 @@ body{
         .left-section {
             flex: 1;
 }
+.download-btn {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            border: 1px solid #bbdefb;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: #bbdefb;
+        }
