@@ -162,3 +162,20 @@ body{
             gap: 12px;
             margin-bottom: 20px;
         }
+        .chart-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #673ab7, #5e35b1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
