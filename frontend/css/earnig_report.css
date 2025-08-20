@@ -115,3 +115,8 @@ body{
     margin-bottom: 10px;
     opacity: 0.9;
 }
+.earnings-amount {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+}
