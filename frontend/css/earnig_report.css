@@ -150,3 +150,9 @@ body{
         .download-btn:hover {
             background-color: #bbdefb;
         }
+          .chart-section {
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 25px;
+        }
