@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <title>ParkSpotter - Smart Parking System</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="./../css/index.css"/>
+  <!-- At the top of your HTML file -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script src="{% static 'js/index.js' %}"></script>
+
 </head>
 <body>
 
@@ -160,7 +164,7 @@
     </span>
   </div>
 </footer>
-<script src="./../js/index.js"></script>
+<script src="../../js/index.js"></script>
  
 </body>
 </html>
