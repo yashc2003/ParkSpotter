@@ -19,10 +19,10 @@
       🚗 ParkSpotter
     </div>
     <div class="nav-links">
-      <a href="./index.html">Dashboard</a>
+      <a href="{% url 'index' %}">Dashboard</a>
       <a href="">Detect Vehicle</a>
-      <a href="./new_entry.html">New Entry</a>
-      <a href="./earnig_report.html">Earnings Report</a>
+      <a href="{% url 'new_entry' %}">New Entry</a>
+      <a href="{% url 'earning_report' %}">Earnings Report</a>
     </div>
     <div class="user-info">
       <span>Hi 👋, User</span>
@@ -166,7 +166,7 @@
     </span>
   </div>
 </footer>
-<script src="../../js/index.js"></script>
+
  
 </body>
 </html>
