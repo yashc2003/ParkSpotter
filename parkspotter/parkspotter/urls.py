@@ -20,5 +20,5 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),#Site url
-    
+    path('new_entry/', new_entry, name='new_entry'),#New entry url
 ]
