@@ -9,3 +9,6 @@ def new_entry(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def recipt(request):
+    return render(request, 'recipt.html')
