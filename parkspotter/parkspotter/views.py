@@ -15,3 +15,6 @@ def recipt(request):
 
 def user_registration(request):
     return render(request, 'user_registration.html')
+
+def earning_report(request):
+    return render(request, 'earning_report.html')
