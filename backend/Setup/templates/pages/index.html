@@ -1,13 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>ParkSpotter - Smart Parking System</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+
   <!-- At the top of your HTML file -->
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
-<script src="{% static 'js/index.js' %}"></script>
+
+<link rel="stylesheet" href="../../static/css/index.css">
+<script src="../../static/js/index.js"></script>
 
 </head>
 <body>
@@ -18,13 +20,13 @@
     </div>
     <div class="nav-links">
       <a href="./../pages/index.html">Dashboard</a>
-      <a href="./../pages/detect.html">Detect Vehicle</a>
-      <a href="./../pages/new_entry.html">New Entry</a>
-      <a href="./../pages/earnings.html">Earnings Report</a>
+      <a href="">Detect Vehicle</a>
+      <a href="./../new_entry.html">New Entry</a>
+      <a href="./../earnings_report.html">Earnings Report</a>
     </div>
     <div class="user-info">
       <span>Hi 👋, User</span>
-     <a href="./../pages/login.html"> <button class="logout-btn">Logout</button></a>
+     <a href="./../login.html"> <button class="logout-btn">Logout</button></a>
     </div>
   </div>
 

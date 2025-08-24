@@ -18,6 +18,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from Setup import views
 
 urlpatterns = [
@@ -27,7 +29,6 @@ urlpatterns = [
     path('earning-report/', views.earning_report, name='earning_report'),  # Earning report page
     path('new-entry/', views.new_entry, name='new_entry'), 
     path('receipt/', views.receipt, name='receipt'),  
-    path('user-registration/', views.user_registration, name='user_registration'),  # User registration page
-   
-]
-
+    path ('user-registration/', views.user_registration, name='user_registration'),  # User registration page
+   path('detect-vehicle/', views.detect_vehicle, name='detect_vehicle'),  # Detect vehicle page
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

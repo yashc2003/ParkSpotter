@@ -13,3 +13,5 @@ def receipt(request):
     return render(request, 'pages/receipt.html')
 def user_registration(request):
     return render(request, 'pages/user_registration.html')
+def detect_vehicle(request):
+    return render(request, 'pages/detect_vehicle.html' )
