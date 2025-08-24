@@ -12,3 +12,6 @@ def login(request):
 
 def recipt(request):
     return render(request, 'recipt.html')
+
+def user_registration(request):
+    return render(request, 'user_registration.html')
