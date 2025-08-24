@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),#Site url
     path('new_entry/', views.new_entry, name='new_entry'),#New entry url
+    path('login/', views.login, name='login'),#Login url
 ]
