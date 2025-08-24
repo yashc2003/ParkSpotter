@@ -1,3 +1,4 @@
+{%load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
-    <link rel="stylesheet" href="./css/user_registration.css">
-</head>
+    <link rel="stylesheet" href="../static/css/user_registration.css">
+    </head>
 
 <body>
     <div class="container">
@@ -41,8 +42,7 @@
             <p class="success" id="successMessage"></p>
         </form>
     </div>
-    <script src="./js/registration.js"></script>
-
+    <script src="{% static 'js/registration.js' %}"></script>
 </body>
 
 </html>

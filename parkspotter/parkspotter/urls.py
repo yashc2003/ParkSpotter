@@ -1,5 +1,5 @@
 """
-URL configuration for Setup project.
+URL configuration for parkspotter project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -14,19 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-
 from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
-from Setup import views
+from . import views
 
 urlpatterns = [
-    path('admin-panel/', admin.site.urls),
-    path("", views.index, name="index"),
-    path("login/", views.login_view, name="login"),
-    path("new-entry/", views.new_entry, name="new_entry"),
-    path("receipt/", views.receipt, name="receipt"),
-    path("user-registration/", views.user_registration, name="user_registration"),
-] 
+    path('admin/', admin.site.urls),
+    path('', views.index, name='index'),#Site url
+    path('new_entry/', views.new_entry, name='new_entry'),#New entry url
+    path('login/', views.login, name='login'),#Login url
+    path('recipt/', views.recipt, name='recipt'),#Recipt url
+    path('user_registration/', views.user_registration, name='user_registration'),#User registration url
+    path('earning_report/', views.earning_report, name='earning_report'),#Earning report urlit 
+]

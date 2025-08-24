@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Entry</title>
-    <link rel="stylesheet" href="./css/new_entry.css">
+    <link rel="stylesheet" href="../static/css/new_entry.css">
+   
 </head>
 <body>
     <div class="container">
@@ -47,8 +49,9 @@
             </div>
              <div class="divider"></div>
 
-            <button type="submit" class="add-entry-btn">Add Entry</button>
+            <button id="submit" type="submit" class="add-entry-btn">Add Entry</button>
         </form>
     </div>
+     <script src="{% static 'js/new_entry.js' %}"></script>
 </body>
 </html>
