@@ -32,7 +32,7 @@ ROOT_URLCONF = 'Setup.urls'  # Replace 'yourproject' with the name of your proje
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / "templates"],   # <-- this is important
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,8 +69,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'Setup' / 'static' / 'css',  # Adjust the path to where your CSS files are stored
-    BASE_DIR / 'Setup' / 'static' / 'js',   # Adjust the path to where your JS files are stored
+    BASE_DIR / 'static',
 ]
 
 

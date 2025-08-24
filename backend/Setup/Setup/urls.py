@@ -24,11 +24,9 @@ from Setup import views
 
 urlpatterns = [
     path('admin-panel/', admin.site.urls),
-    path('', views.index, name='index'),  # Main page
-    path('login/', views.login, name='login'),  # Login page
-    path('earning-report/', views.earning_report, name='earning_report'),  # Earning report page
-    path('new-entry/', views.new_entry, name='new_entry'), 
-    path('receipt/', views.receipt, name='receipt'),  
-    path ('user-registration/', views.user_registration, name='user_registration'),  # User registration page
-   path('detect-vehicle/', views.detect_vehicle, name='detect_vehicle'),  # Detect vehicle page
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("", views.index, name="index"),
+    path("login/", views.login_view, name="login"),
+    path("new-entry/", views.new_entry, name="new_entry"),
+    path("receipt/", views.receipt, name="receipt"),
+    path("user-registration/", views.user_registration, name="user_registration"),
+] 
