@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from parkspotter import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),#Site url
-    path('new_entry/', new_entry, name='new_entry'),#New entry url
+    path('', views.index, name='index'),#Site url
+    path('new_entry/', views.new_entry, name='new_entry'),#New entry url
 ]
