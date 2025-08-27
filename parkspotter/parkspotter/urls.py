@@ -20,9 +20,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),#Site url
+    path('dashboard/', views.index, name='index'),#Site url
     path('new_entry/', views.new_entry, name='new_entry'),#New entry url
-    path('login/', views.login, name='login'),#Login url
+    path('', views.login, name='login'),#Login url
     path('recipt/', views.recipt, name='recipt'),#Recipt url
     path('user_registration/', views.user_registration, name='user_registration'),#User registration url
     path('earning_report/', views.earning_report, name='earning_report'),#Earning report urlit 

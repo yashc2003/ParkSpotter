@@ -1,36 +1,5 @@
-
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ title }}</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-
-  <!-- At the top of your HTML file -->
-
-<link rel="stylesheet" href="./static/css/index.css">
-
-
-</head>
-<body>
-
-  <div class="navbar">
-    <div class="brand">
-      🚗 ParkSpotter
-    </div>
-    <div class="nav-links">
-      <a href="{% url 'index' %}">Dashboard</a>
-      <a href="">Detect Vehicle</a>
-      <a href="{% url 'new_entry' %}">New Entry</a>
-      <a href="{% url 'earning_report' %}">Earnings Report</a>
-    </div>
-    <div class="user-info">
-      <span>Hi 👋, User</span>
-     <a href="./login.html"> <button class="logout-btn">Logout</button></a>
-    </div>
-  </div>
-
+{% extends 'base.html' %}
+{% block content %}
   <div class="dashboard-container">
     <h2>🚗 Parking Dashboard</h2>
 
@@ -158,16 +127,4 @@
 
   </div>
 
-  <footer class="footer">
-  <div class="footer-content">
-    <span class="footer-logo"><span class="emoji">🚗</span> ParkSpotter</span>
-    <span class="footer-text">© 2025 ParkSpotter. All rights reserved.</span>
-    <span class="footer-links">
-      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-    </span>
-  </div>
-</footer>
-
-<script src="{% static 'js/index.js' %}"></script>
-</body>
-</html>
+{% endblock %}
