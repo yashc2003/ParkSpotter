@@ -21,9 +21,13 @@ body {
   width: 350px;
   border: 1px solid #e0e0e0;
 }
-
+.register-link {
+  margin-top: 1px;
+  font-size: 14px;
+}
 .btn{
   width: 100%;
+  margin: 5px 0;
   padding: 12px;
   border: none;
   background: #a8dadc;

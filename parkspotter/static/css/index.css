@@ -52,7 +52,10 @@
       font-weight: bold;
       font-size: 1em;
     }
-
+  .navbar .nav-links .active  {
+      background-color: blue;
+      font-weight: bold;
+    }
     .dashboard-container {
       max-width: 1200px;
       padding: 25px 18px 70px 18px;

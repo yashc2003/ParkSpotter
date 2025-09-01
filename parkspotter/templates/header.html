@@ -19,13 +19,13 @@
       🚗 ParkSpotter
     </div>
     <div class="nav-links">
-      <a href="{% url 'index' %}">Dashboard</a>
-      <a href="">Detect Vehicle</a>
-      <a href="{% url 'new_entry' %}">New Entry</a>
-      <a href="{% url 'earning_report' %}">Earnings Report</a>
+      <a class="{% if request.path == '/dashboard/' %}active{% endif %}" href="{% url 'index' %}">Dashboard</a>
+      <a class="{% if request.path == '/detect_vehicle/' %}active{% endif %}" href="">Detect Vehicle</a>
+      <a class="{% if request.path == '/new_entry/' %}active{% endif %}" href="{% url 'new_entry' %}">New Entry</a>
+      <a class="{% if request.path == '/earning_report/' %}active{% endif %}" href="{% url 'earning_report' %}">Earnings Report</a>
     </div>
     <div class="user-info">
       <span>Hi 👋, User</span>
-     <a href="./login.html"> <button class="logout-btn">Logout</button></a>
+     <a href=""> <button class="logout-btn">Logout</button></a>
     </div>
   </div>
