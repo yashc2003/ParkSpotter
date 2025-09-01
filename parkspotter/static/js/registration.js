@@ -1,5 +1,5 @@
- document.getElementById("registrationForm").addEventListener("submit", function (e) {
-            e.preventDefault();
+// document.getElementById("registrationForm").addEventListener("submit", function (e) {
+           // e.preventDefault();
 
             let name = document.getElementById("name").value.trim();
             let email = document.getElementById("email").value.trim();
