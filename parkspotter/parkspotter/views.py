@@ -19,8 +19,14 @@ def recipt(request):
     return render(request, 'recipt.html')
 
 def user_registration(request):
-    
-    return render(request, 'user_registration.html')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("User registered successfully!")
+    else:
+        form = UserCreationForm()
+    return render(request, 'user_registration.html', {'form': form})
 
 def earning_report(request):
     return render(request, 'earning_report.html')
