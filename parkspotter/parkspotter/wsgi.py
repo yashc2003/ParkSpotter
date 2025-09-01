@@ -8,17 +8,9 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 """
 
 import os
-import sys
 
-# add your project directory to the sys.path
-project_home = '/home/ShrileshDhobale01/ParkSpotter/parkspotter'
-if project_home not in sys.path:
-    sys.path.insert(0, project_home)
-
-# set environment variable to tell django where your settings.py is
-os.environ['DJANGO_SETTINGS_MODULE'] = 'parkspotter.settings'
-
-
-# serve django via WSGI
 from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'parkspotter.settings')
+
 application = get_wsgi_application()
