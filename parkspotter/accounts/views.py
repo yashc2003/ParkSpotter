@@ -4,3 +4,4 @@ from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 
 # Create your views here.
+User=get_user_model()
