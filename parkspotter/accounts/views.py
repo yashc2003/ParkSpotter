@@ -18,3 +18,6 @@ def signup_view(request):
         if User.objects.filter(email=email).exists():
             messages.error(request, "Email already in use.")
             return redirect('user_registration')
+        if User.objects.filter(phone_number=phone).exists():
+            messages.error(request, "Phone number already in use.")
+            return redirect('user_registration')
