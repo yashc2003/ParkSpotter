@@ -36,4 +36,8 @@ def login_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         user = authenticate(request, username=email, password=password)
+        if user:
+            login(request, user)
+            return redirect('dashboard')
+
         
