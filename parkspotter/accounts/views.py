@@ -29,3 +29,4 @@ def signup_view(request):
             password=make_password(password)
         )
         messages.success(request, "Registration successful. Please log in.")
+        return redirect('login')
