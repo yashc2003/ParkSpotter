@@ -39,5 +39,8 @@ def login_view(request):
         if user:
             login(request, user)
             return redirect('dashboard')
+        else:
+            messages.error(request, "Invalid email or password.")
+            return redirect('login')
 
         
