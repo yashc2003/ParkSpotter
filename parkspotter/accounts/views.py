@@ -31,3 +31,9 @@ def signup_view(request):
         messages.success(request, "Registration successful. Please log in.")
         return redirect('login')
     return render(request, 'user_registration.html')
+def login_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, username=email, password=password)
+        
