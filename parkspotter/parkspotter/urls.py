@@ -26,4 +26,6 @@ urlpatterns = [
     path('recipt/', views.recipt, name='recipt'),#Recipt url
     path('earning_report/', views.earning_report, name='earning_report'),#Earning report urlit 
     path('accounts/', include('accounts.urls')), # Include accounts app URLs
+    path('', views.login, name='login'),#Login url --- IGNORE ---
 ]
+    

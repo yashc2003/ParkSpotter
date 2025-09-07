@@ -25,7 +25,7 @@ def signup_view(request):
             username=email,
             email=email,
             phone_number=phone,
-            first_name=full_name
+            first_name=full_name,
             password=make_password(password)
         )
         messages.success(request, "Registration successful. Please log in.")
