@@ -21,3 +21,11 @@ def signup_view(request):
         if User.objects.filter(phone_number=phone).exists():
             messages.error(request, "Phone number already in use.")
             return redirect('user_registration')
+        user = User.objects.create(
+            username=email,
+            email=email,
+            phone_number=phone,
+            first_name=full_name
+            password=make_password(password)
+        )
+        messages.success(request, "Registration successful. Please log in.")
