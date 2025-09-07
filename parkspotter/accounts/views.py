@@ -12,3 +12,6 @@ def signup_view(request):
         phone = request.POST.get('phone')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
+        if password != confirm_password:
+            messages.error(request, "Passwords do not match.")
+            return redirect('user_registration')
