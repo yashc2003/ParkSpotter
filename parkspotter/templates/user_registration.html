@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h2>User Registration</h2>
-        <form id="registrationForm" method="post">
+        <form id="registrationForm" method="post" action="{% url 'user_registration' %}">
             {% csrf_token %}
         
             <div class="form-group">

@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', views.index, name='dashboard'),#Site url
     path('new_entry/', views.new_entry, name='new_entry'),#New entry url
-    path('', views.login, name='login'),#Login url
+    
     path('recipt/', views.recipt, name='recipt'),#Recipt url
     path('earning_report/', views.earning_report, name='earning_report'),#Earning report urlit 
+    path
 ]
