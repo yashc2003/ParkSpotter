@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,5 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT =BASE_DIR / "staticfiles"
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL = "base:index"
-LOGOUT_REDIRECT_URL = "base:login"

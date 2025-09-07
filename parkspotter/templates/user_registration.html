@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
-    <link rel="stylesheet" href="../static/css/user_registration.css">
+    <link rel="stylesheet" href="{% static 'css/user_registration.css' %}">
     </head>
 
 <body>
     <div class="container">
         <h2>User Registration</h2>
-        <form id="registrationForm" method="post">
+        <form id="registrationForm" method="post" action="{% url 'user_registration' %}">
             {% csrf_token %}
         
             <div class="form-group">
