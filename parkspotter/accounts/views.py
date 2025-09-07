@@ -30,4 +30,4 @@ def signup_view(request):
         )
         messages.success(request, "Registration successful. Please log in.")
         return redirect('login')
-    return render(request, 'registration.html')
+    return render(request, 'user_registration.html')
