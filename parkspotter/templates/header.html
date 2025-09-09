@@ -19,7 +19,7 @@
       🚗 ParkSpotter
     </div>
     <div class="nav-links">
-      <a class="{% if request.path == '/dashboard/' %}active{% endif %}" href="{% url 'index' %}">Dashboard</a>
+      <a class="{% if request.path == '/dashboard/' %}active{% endif %}" href="{% url 'dashboard' %}">Dashboard</a>
       <a class="{% if request.path == '/detect_vehicle/' %}active{% endif %}" href="">Detect Vehicle</a>
       <a class="{% if request.path == '/new_entry/' %}active{% endif %}" href="{% url 'new_entry' %}">New Entry</a>
       <a class="{% if request.path == '/earning_report/' %}active{% endif %}" href="{% url 'earning_report' %}">Earnings Report</a>
