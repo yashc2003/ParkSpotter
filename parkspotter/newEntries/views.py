@@ -34,4 +34,4 @@ def new_entry(request):
         messages.success(request, "Entry added successfully!")
         return redirect('dashboard')
     return render(request, 'new_entry.html')
-
+    
