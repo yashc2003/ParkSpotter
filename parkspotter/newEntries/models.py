@@ -11,3 +11,6 @@ class NewEntry(models.Model):
     entry_time=models.DateTimeField()
     exit_time=models.DateTimeField(null=True,blank=True)
     is_paid=models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.plate_number}({self.vehicle_type})"
