@@ -19,3 +19,7 @@ def new_entry(request):
         if not plate_number or not vehicle_type or not entry_time:
             messages.error(request, "Please fill all required fields.")
             return redirect('new_entry')
+        
+        entry_time_parsed = parse_datetime(entry_time)
+        exit_time_parsed = parse_datetime(exit_time) if exit_time else None
+
