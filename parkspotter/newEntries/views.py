@@ -31,3 +31,7 @@ def new_entry(request):
             is_paid=is_paid
         )
 
+        messages.success(request, "Entry added successfully!")
+        return redirect('dashboard')
+    return render(request, 'new_entry.html')
+
