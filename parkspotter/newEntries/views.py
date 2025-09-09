@@ -15,3 +15,7 @@ def new_entry(request):
         entry_time = request.POST.get('entryTime')
         exit_time = request.POST.get('exitTime')
         is_paid = request.POST.get('isPaid') == 'on'
+
+        if not plate_number or not vehicle_type or not entry_time:
+            messages.error(request, "Please fill all required fields.")
+            return redirect('new_entry')
