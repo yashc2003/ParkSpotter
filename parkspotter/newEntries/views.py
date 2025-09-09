@@ -23,7 +23,7 @@ def new_entry(request):
         entry_time_parsed = parse_datetime(entry_time)
         exit_time_parsed = parse_datetime(exit_time) if exit_time else None
 
-        VehicleEntry.objects.create(
+        NewEntry.objects.create(
             plate_number=plate_number,
             vehicle_type=vehicle_type,
             entry_time=entry_time_parsed,
