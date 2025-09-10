@@ -51,3 +51,12 @@ color: #333;
             background-color: #2980b9;
             transform: translateY(-2px);
         }
+.btn-secondary {
+            background-color: #16a085;
+            color: white;
+        }
+
+.btn-secondary:hover {
+            background-color: #138d75;
+            transform: translateY(-2px);
+        }
