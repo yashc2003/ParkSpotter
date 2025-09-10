@@ -91,3 +91,7 @@ color: #333;
             align-items: center;
             justify-content: center;
         }
+ .upload-area.dragover {
+            border-color: #3498db;
+            background-color: #ecf0f1;
+        }
