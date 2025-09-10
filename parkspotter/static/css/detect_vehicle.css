@@ -25,3 +25,10 @@ color: #333;
             color: #7f8c8d;
             margin-bottom: 50px;
         }
+.button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
