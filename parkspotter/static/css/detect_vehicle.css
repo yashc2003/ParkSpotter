@@ -99,3 +99,9 @@ color: #333;
             border-style: solid;
             border-color: #27ae60;
         }
+#imagePreview {
+            max-width: 100%;
+            max-height: 250px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
