@@ -95,3 +95,7 @@ color: #333;
             border-color: #3498db;
             background-color: #ecf0f1;
         }
+ .upload-area.has-image {
+            border-style: solid;
+            border-color: #27ae60;
+        }
