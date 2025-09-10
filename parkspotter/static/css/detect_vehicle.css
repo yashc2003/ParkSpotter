@@ -32,3 +32,13 @@ color: #333;
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
+.btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 160px;
+        }
