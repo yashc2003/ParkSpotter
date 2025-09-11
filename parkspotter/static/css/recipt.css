@@ -102,6 +102,11 @@
             padding: 2px 4px;
             border-radius: 3px;
         }
+.vehicle-type {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #2196f3;
+        }
 
 
 
