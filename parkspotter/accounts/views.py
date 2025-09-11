@@ -9,7 +9,8 @@ def signup_view(request):
     if request.user.is_authenticated:
         return redirect('dashboard')
     if request.method == 'POST':
-        full_name = request.POST.get('full_name')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         password = request.POST.get('password')
