@@ -32,6 +32,6 @@ def new_entry(request):
         )
 
         messages.success(request, "Entry added successfully!")
-        return redirect('dashboard')
+        return redirect('recipt', entry_id=NewEntry.id)
     return render(request, 'new_entry.html')
     

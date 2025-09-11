@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from .models import NewEntry
-from django.contrin.b.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import datetime
 
@@ -8,7 +8,7 @@ from datetime import datetime
 @login_required
 def recipt(request,entry_id):
     entry=get_object_or_404(NewEntry,id=entry_id)
-
+    return render(request, 'recipt.html')
     if not entry.is_paid:
         return render(request, 'recipt.html', {
             'error': 'Payment not completed. Please pay the bill to get the receipt.'
