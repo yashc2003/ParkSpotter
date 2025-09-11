@@ -8,3 +8,11 @@
             align-items: center;
             min-height: 100vh;
         }
+ .receipt {
+            background-color: white;
+            width: 350px;
+            padding: 20px;
+            border: 2px dashed #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
