@@ -13,4 +13,8 @@ def recipt(request,entry_id):
         return render(request, 'recipt.html', {
             'error': 'Payment not completed. Please pay the bill to get the receipt.'
         })
-    
+    rates = {
+        'Bike': 30,
+        'Car': 80,
+        'Bus': 120,
+    }
