@@ -16,3 +16,8 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
         }
+.header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
