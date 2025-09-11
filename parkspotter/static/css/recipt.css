@@ -41,5 +41,11 @@
             text-align: left;
             margin: 20px 0;
         }
+.receipt-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 5px 0;
+        }
 
 
