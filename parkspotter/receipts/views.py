@@ -5,3 +5,6 @@ from django.contrib import messages
 from datetime import datetime
 
 # Create your views here.
+@login_required
+def recipt(request,entry_id):
+    entry=get_object_or_404(NewEntry,id=entry_id)
