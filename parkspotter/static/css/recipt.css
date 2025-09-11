@@ -71,5 +71,10 @@
             border: 2px solid #000;
             display: inline-block;
         }
+.amount {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
 
 
