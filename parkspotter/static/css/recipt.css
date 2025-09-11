@@ -31,3 +31,10 @@
             color: #666;
             margin-bottom: 10px;
         }
+.receipt-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
