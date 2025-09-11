@@ -9,3 +9,4 @@ function updateDateTime() {
              console.log('Current date:', currentDate);
             console.log('Current time:', currentTime);
         }
+        updateDateTime();
