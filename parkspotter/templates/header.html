@@ -25,7 +25,7 @@
       <a class="{% if request.path == '/earning_report/' %}active{% endif %}" href="{% url 'earning_report' %}">Earnings Report</a>
     </div>
     <div class="user-info">
-      <span>Hi 👋, User</span>
+      <span>Hi 👋, {{ request.user.first_name }}</span>
      <a href="{% url 'logout' %}"> <button class="logout-btn">Logout</button></a>
     </div>
   </div>
