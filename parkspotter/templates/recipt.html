@@ -11,29 +11,19 @@
      
 </head>
 <body>
-
-
-
-  <div class="container">
-    <div class="card">
-      <div class="card-header">Parking Receipt</div>
-      <div class="card-body">
-        <div class="row"><div class="key">Plate Number:</div><input id="plate" type="text" placeholder="Enter Plate Number"></div>
-        <div class="row"><div class="key">Vehicle Type:</div><input id="vehicle" type="text" placeholder="Enter Vehicle Type"></div>
-        <div class="row"><div class="key">Entry Time:</div><input id="entry" type="datetime-local"></div>
-        <div class="row"><div class="key">Exit Time:</div><input id="exit" type="datetime-local"></div>
-        <div class="row"><div class="key">Duration:</div><input id="duration" type="text" readonly></div>
-        <div class="row"><div class="key">Total Charge:</div><input id="charge" type="text" readonly></div>
-        <div class="row"><div class="key">Payment Status:</div><input id="status" type="text" placeholder="Enter Status (PAID/UNPAID)"></div>
-
-        <button class="btn" onclick="submitForm()">💾 Save Receipt</button>
-        <button class="btn btn-secondary" onclick="savePDF()">📄 Save as PDF</button>
-        <button class="btn btn-back" onclick="goDashboard()">⬅ Back to Dashboard</button>
-      </div>
-    </div>
-  </div> 
+  <div class="receipt">
+     <div class="header">
+            <div class="company-name">SECURE PARKING</div>
+            <div class="company-address">
+                123 Downtown Plaza<br>
+                City Center, State 12345<br>
+                Phone: (555) 123-4567
+            </div>
+            <div class="receipt-title">Parking Receipt</div>
+        </div>
+  </div>
   <script src="{% static 'js/receipt.js' %}"></script>
-  
+
 </body>
 </html>
 {% endblock %}
