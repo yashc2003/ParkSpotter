@@ -19,3 +19,4 @@ def recipt(request,entry_id):
         'Bus': 120,
     }
     rate = rates.get(entry.vehicle_type, 0)
+    amount = rate
