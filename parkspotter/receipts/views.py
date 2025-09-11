@@ -20,3 +20,11 @@ def recipt(request,entry_id):
     }
     rate = rates.get(entry.vehicle_type, 0)
     amount = rate
+
+    context = {
+        'plate_number': entry.plate_number,
+        'vehicle_type': entry.vehicle_type,
+        'entry_time': entry.entry_time,
+        'is_paid': entry.is_paid,
+        'amount': amount,
+    }
