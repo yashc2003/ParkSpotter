@@ -5,6 +5,7 @@ class NewEntry(models.Model):
     VEHICLE_TYPE_CHOICES=[
         ('Car','Car'),
         ('Bike','Bike'),
+        ('Bus','Bus'),
     ]
     plate_number=models.CharField(max_length=20)
     vehicle_type=models.CharField(max_length=10,choices=VEHICLE_TYPE_CHOICES)
