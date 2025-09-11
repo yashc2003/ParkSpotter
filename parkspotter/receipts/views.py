@@ -28,3 +28,4 @@ def recipt(request,entry_id):
         'is_paid': entry.is_paid,
         'amount': amount,
     }
+    return render(request, 'recipt.html', context)
