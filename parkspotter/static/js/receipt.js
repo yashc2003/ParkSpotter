@@ -6,3 +6,6 @@ function updateDateTime() {
                 hour: '2-digit', 
                 minute: '2-digit' 
             });
+             console.log('Current date:', currentDate);
+            console.log('Current time:', currentTime);
+        }
