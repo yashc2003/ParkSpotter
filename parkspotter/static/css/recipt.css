@@ -37,4 +37,9 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+.receipt-body {
+            text-align: left;
+            margin: 20px 0;
+        }
+
 
