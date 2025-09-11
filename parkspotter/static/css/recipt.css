@@ -6,40 +6,7 @@
       color: #1f2937;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .brand {
-      font-weight: bold;
-      font-size: 20px;
-      color: #d1242f;
-    }
-    .nav-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #374151;
-      font-size: 14px;
-    }
-    .right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logout {
-      background: #ef4444;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+   
 
 
     .container {
