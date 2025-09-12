@@ -1,14 +1,13 @@
 from django.shortcuts import render,get_object_or_404
-from .models import NewEntry
+from newEntries.models import NewEntry
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from datetime import datetime
+
 
 # Create your views here.
 @login_required
 def recipt(request,entry_id):
     entry=get_object_or_404(NewEntry,id=entry_id)
-    return render(request, 'recipt.html')
+    
     if not entry.is_paid:
         return render(request, 'recipt.html', {
             'error': 'Payment not completed. Please pay the bill to get the receipt.'

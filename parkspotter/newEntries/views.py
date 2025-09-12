@@ -21,17 +21,17 @@ def new_entry(request):
             return redirect('new_entry')
         
         entry_time_parsed = parse_datetime(entry_time)
-        exit_time_parsed = parse_datetime(exit_time) if exit_time else None
+        
 
-        NewEntry.objects.create(
+        entry = NewEntry.objects.create(
             plate_number=plate_number,
             vehicle_type=vehicle_type,
             entry_time=entry_time_parsed,
-            exit_time=exit_time_parsed,
+        
             is_paid=is_paid
         )
 
         messages.success(request, "Entry added successfully!")
-        return redirect('recipt', entry_id=NewEntry.id)
+        return redirect('recipt', entry_id=entry.id)
     return render(request, 'new_entry.html')
     
