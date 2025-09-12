@@ -20,7 +20,8 @@
             <div class="icon"></div>
             <h1>Manual Vehicle Entry</h1>
         </div>
-        <form id="vehicleEntryform">
+        <form id="vehicleEntryform" method="post">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="plateNumber">Plate number:</label>
                 <input type="text" id="plateNumber" class="form-control" placeholder="Enter plate number">
