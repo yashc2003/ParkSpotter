@@ -25,6 +25,7 @@ def recipt(request,entry_id):
         'vehicle_type': entry.vehicle_type,
         'entry_time': entry.entry_time,
         'is_paid': entry.is_paid,
+        'rate': rate,
         'amount': amount,
     }
     return render(request, 'recipt.html', context)
