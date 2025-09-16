@@ -21,11 +21,12 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', views.index, name='dashboard'),#Site url
-    path('new_entry/', views.new_entry, name='new_entry'),#New entry url
-    
-    path('recipt/', views.recipt, name='recipt'),#Recipt url
-    path('earning_report/', views.earning_report, name='earning_report'),#Earning report urlit 
+    path('new_entry/', include('newEntries.urls'), name='new_entry'),#New entry url
+
+    path('recipt/', include('receipts.urls'), name='recipt'),#Recipt url
+    path('earning_report/', views.earning_report, name='earning_report'),#Earning report urlit
     path('accounts/', include('accounts.urls')), # Include accounts app URLs
-    path('', views.login, name='login'),#Login url --- IGNORE ---
+    path('', include('accounts.urls')),#Django auth urls
+    
 ]
     

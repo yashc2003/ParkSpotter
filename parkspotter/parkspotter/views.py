@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -13,8 +13,7 @@ def index(request):
 def new_entry(request):
     return render(request, 'new_entry.html')
 
-def login(request):
-    return render(request, 'login.html')
+
 
 def recipt(request):
     return render(request, 'recipt.html')

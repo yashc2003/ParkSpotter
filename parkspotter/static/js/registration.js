@@ -1,7 +1,8 @@
 // document.getElementById("registrationForm").addEventListener("submit", function (e) {
            // e.preventDefault();
 
-            let name = document.getElementById("name").value.trim();
+            let first_name = document.getElementById("first_name").value.trim();
+            let last_name = document.getElementById("last_name").value.trim();
             let email = document.getElementById("email").value.trim();
             let phone = document.getElementById("phone").value.trim();
             let vehicle = document.getElementById("vehicle").value.trim();
@@ -14,7 +15,7 @@
             errorMessage.textContent = "";
             successMessage.textContent = "";
 
-            if(name === "" || email === "" || phone === "" || vehicle === "" || password === "" || confirmPassword === ""){
+            if(first_name === "" || last_name === "" || email === "" || phone === "" || vehicle === "" || password === "" || confirmPassword === ""){
         errorMessage.textContent = "All fields are required.";
         return;
       }
@@ -40,6 +41,6 @@
         errorMessage.textContent = "Passwords do not match.";
         return;
       }
-
+      {
       successMessage.textContent = "Registration successful!";
-        });
+    };

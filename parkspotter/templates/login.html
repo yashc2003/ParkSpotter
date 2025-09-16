@@ -11,15 +11,16 @@
     <div class="container"> 
         <div class="login-box">
           <h1>🔒Employee Login🔒</h1> 
-        <form>
-            <label for="inputusername"><b>Username:</b></label>
-            <input type="text" id="inputusername" placeholder="Enter username" required/>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="inputusername"><b>Email:</b></label>
+            <input type="email" id="inputusername" name="email" placeholder="Enter email" required/>
         <br /><br />
             <label for="inputpassword"><b>Password:</b></label>
-            <input type="password" id="inputpassword" placeholder="Enter password" required/>
+            <input type="password" id="inputpassword" name="password" placeholder="Enter password" required/>
         <br /><br />
         <div class="register-link">Don't have an account? <a href="{% url 'user_registration' %}">Register Now</a></div>
-        <button type="submit" class="btn"><a href="{% url 'dashboard' %}">Login</a></button>
+        <button type="submit" class="btn">Login</button>
         </form> 
         </div>
     </div>

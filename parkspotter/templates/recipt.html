@@ -7,46 +7,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receipt</title>
-    <link rel="stylesheet" href="../static/css/recipt.css">
+    <link rel="stylesheet" href="{% static 'css/recipt.css' %}">
      
 </head>
 <body>
-  
-  <div class="navbar">
-    <div class="brand">🚗 Smart Parking</div>
-    <div class="nav-links">
-      <a href="#">Dashboard</a>
-      <a href="#">Detect Vehicle</a>
-      <a href="#">New Entry</a>
-      <a href="#">Earnings Report</a>
-    </div>
-    <div class="right">
-      <span>Hi 👋, rohit</span>
-      <button class="logout">Logout</button>
-    </div>
+  <div class="receipt">
+     <div class="header">
+            <div class="company-name">SECURE PARKING</div>
+            <div class="company-address">
+                123 Downtown Plaza<br>
+                City Center, State 12345<br>
+                Phone: (555) 123-4567
+            </div>
+            <div class="receipt-title">Parking Receipt</div>
+        </div>
   </div>
-
-
-  <div class="container">
-    <div class="card">
-      <div class="card-header">Parking Receipt</div>
-      <div class="card-body">
-        <div class="row"><div class="key">Plate Number:</div><input id="plate" type="text" placeholder="Enter Plate Number"></div>
-        <div class="row"><div class="key">Vehicle Type:</div><input id="vehicle" type="text" placeholder="Enter Vehicle Type"></div>
-        <div class="row"><div class="key">Entry Time:</div><input id="entry" type="datetime-local"></div>
-        <div class="row"><div class="key">Exit Time:</div><input id="exit" type="datetime-local"></div>
-        <div class="row"><div class="key">Duration:</div><input id="duration" type="text" readonly></div>
-        <div class="row"><div class="key">Total Charge:</div><input id="charge" type="text" readonly></div>
-        <div class="row"><div class="key">Payment Status:</div><input id="status" type="text" placeholder="Enter Status (PAID/UNPAID)"></div>
-
-        <button class="btn" onclick="submitForm()">💾 Save Receipt</button>
-        <button class="btn btn-secondary" onclick="savePDF()">📄 Save as PDF</button>
-        <button class="btn btn-back" onclick="goDashboard()">⬅ Back to Dashboard</button>
+  <div class="receipt-body">
+     <div class="receipt-row">
+                <span class="label">Vehicle Plate:</span>
+                <span class="value plate-number">{{ plate_number }}</span>
       </div>
-    </div>
-  </div> 
+      <div class="receipt-row">
+                <span class="label">Vehicle Type:</span>
+                <span class="value vehicle-type">{{ vehicle_type }}</span>
+      </div>
+      <div class="receipt-row">
+                <span class="label">Entry Time:</span>
+                <span class="value datetime">{{ entry_time }}</span>
+      </div>
+      <div class="receipt-row">
+                <span class="label">Rate:</span>
+                <span class="value">{{ rate }}</span>
+      </div>
+      <div class="receipt-row" style="border-top: 1px dashed #ccc; padding-top: 10px; margin-top: 10px;">
+                <span class="label">Total Amount:</span>
+                <span class="value amount">{{ amount }}</span>
+      </div>
+      <div class="footer">
+            <div class="receipt-number">Receipt #: PK-2024-091123456</div>
+            <div class="thank-you">Thank You for Parking With Us!</div>
+            <div class="contact-info">
+                Please keep this receipt for your records<br>
+                Lost ticket fee: $25.00
+            </div>
+      </div>
+  </div>
   <script src="{% static 'js/receipt.js' %}"></script>
-  
+
 </body>
 </html>
 {% endblock %}
